@@ -1,7 +1,8 @@
+import { useSelector } from 'react-redux'
 import { Produto as ProdutoType } from '../App'
 import Produto from '../components/Produto'
-
 import * as S from './styles'
+import { RootReducer } from '../store'
 
 type Props = {
   produtos: ProdutoType[]

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { Produto } from '../../App'
-import { RootReducer } from '../../store'
+
 type favoritosState = {
   itens: Produto[]
 }
@@ -26,6 +26,9 @@ const favoritosSlice = createSlice({
   }
 })
 
-export const selectFavoritos = (state: RootReducer) => state.favoritos
+export interface AppState {
+  favoritos: favoritosState
+}
+
 export const { favoritar } = favoritosSlice.actions
 export default favoritosSlice.reducer
