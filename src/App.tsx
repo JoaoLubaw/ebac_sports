@@ -1,6 +1,5 @@
 import Header from './components/Header'
 import Produtos from './containers/Produtos'
-
 import { GlobalStyle } from './styles'
 import { RootReducer } from './store'
 import { useSelector } from 'react-redux'
@@ -20,13 +19,13 @@ function App() {
   const products = ProductsItems.data ?? []
 
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle />
       <div className="container">
         <Header favoritos={favItems} itensNoCarrinho={cartItems} />
         <Produtos produtos={products} favoritos={favItems} />
       </div>
-    </>
+    </Provider>
   )
 }
 
